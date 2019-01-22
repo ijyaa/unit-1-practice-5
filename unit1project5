@@ -1,0 +1,10 @@
+SELECT 
+	trips.duration,
+	weather.events
+FROM 
+	trips
+JOIN 
+	weather 
+ON 
+	trips.zip_code = weather.zip
+AND weather.events = 'Rain';

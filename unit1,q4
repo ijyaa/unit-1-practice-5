@@ -1,0 +1,11 @@
+SELECT 
+	status.docks_available,
+	stations.name,
+	stations.station_id
+FROM status
+JOIN 
+	stations
+ON 
+	stations.station_id = status.station_id
+AND status.docks_available = 0
+GROUP BY status.docks_available, stations.station_id, stations.name;

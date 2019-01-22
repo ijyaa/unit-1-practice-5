@@ -1,0 +1,9 @@
+select 
+	stations.name,
+	MIN(status.bikes_available) bike_avail
+FROM stations
+JOIN 
+	status
+ON
+	stations.station_id = status.station_id
+GROUP BY stations.name;
